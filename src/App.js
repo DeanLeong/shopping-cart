@@ -6,6 +6,9 @@ import "./App.css";
 
 function App() {
   const [products, setProducts] = useState(productsData);
+  const [name, setName] = useState("");
+  const [price, setPrice] = useState("");
+  const [description, setDescription] = useState("");
 
   console.log(banana);
 
@@ -18,6 +21,16 @@ function App() {
   return (
     <div className="App">
       <h1>The Bizarre Bazaar</h1>
+      <form>
+        <label htmlFor="name">Name:</label>
+        <input
+          name="name"
+          type="text"
+          value={name}
+          onChange={(event) => setName(event.target.value)}
+        />
+      </form>
+
       <button onClick={() => setProducts([...products, newProduct])}>
         LASSO ME BABY
       </button>
